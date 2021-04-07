@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Somasundaram R
-  description: This ansible role helps windows admin to do MSI Windows Installer automation
+  description: MSI Windows Installer automation
   company: -NA-
   license: GPL-2.0-or-later
   min_ansible_version: 2.9
