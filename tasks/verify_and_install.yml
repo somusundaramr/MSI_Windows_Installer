@@ -12,7 +12,7 @@
     - name: Copy MSI file from network share to host
       win_copy:
         src: "{{ MSI_File_Location }}"
-        dest: C:\temp\{{ MSI_File_name }}
+        dest: C:\temp\{{ MSI_File_Location | basename }}
       register: msicopy_status
 
     - name: Install MSI Package
@@ -23,6 +23,10 @@
         state: present
       register: installation_status
       when: not msicopy_status.failed
+      notify:
+        - update install status
+    - name: flush handlers 
+      meta: flush_handlers
   when: stat_file.stat.exists and ansible_powershell_version >= 3 and not pre_installation.exists
   become: yes
   become_user: ansible
