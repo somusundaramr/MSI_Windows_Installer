@@ -41,7 +41,7 @@ Example Playbook
 License
 -------
 
-BSD
+GPL 2.0
 
 Author Information
 ------------------
