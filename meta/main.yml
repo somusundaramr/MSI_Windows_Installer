@@ -5,7 +5,7 @@ galaxy_info:
   company: -NA-
   license: GPL-2.0-or-later
   min_ansible_version: 2.9
-  role_name: MSI_Windows_Installer
+  role_name: msi_windows_installer
   platforms:
    - name: EL
      versions:
