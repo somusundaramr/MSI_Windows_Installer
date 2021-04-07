@@ -17,7 +17,6 @@
         path: logs/winmsi_logfile
         line: "MSI file not found in specified location"
       delegate_to: localhost
-
     - meta: end_play
   when: not stat_file.stat.exists
 ...
