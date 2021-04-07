@@ -25,7 +25,7 @@
       when: not msicopy_status.failed
       notify:
         - update install status
-    - name: flush handlers 
+    - name: flush handlers
       meta: flush_handlers
   when: stat_file.stat.exists and ansible_powershell_version >= 3 and not pre_installation.exists
   become: yes
