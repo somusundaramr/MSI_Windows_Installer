@@ -3,13 +3,15 @@ galaxy_info:
   description: This ansible role helps windows admin to do MSI Windows Installer automation
   company: -NA-
   license: GPL-2.0-or-later
-
   min_ansible_version: 2.9
-
+  role_name: MSI_Windows_Installer
   platforms:
-   - name: Centos, RHEL
+   - name: EL
      versions:
      - 8
-  galaxy_tags: 
-  dependencies: 
-  
+  galaxy_tags:
+    - windows
+    - MSI
+    - Installer
+  dependencies: []
+---
