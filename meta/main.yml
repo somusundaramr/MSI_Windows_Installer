@@ -12,7 +12,7 @@ galaxy_info:
      - 8
   galaxy_tags:
     - windows
-    - MSI
-    - Installer
+    - msi
+    - installer
   dependencies: []
 ...
