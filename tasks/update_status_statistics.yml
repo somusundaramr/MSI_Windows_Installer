@@ -9,14 +9,6 @@
     Exist: "{{ Exist | int + 1 }}"
   when: pre_installation.exists
 #-----------------------------------------------------------------------------------
-- name: Updates status of installation when installing through current play
-#-----------------------------------------------------------------------------------
-  set_fact:
-    installation: "Installed"
-    restart_required: "{{ installation_status.reboot_required }}"
-    Installed: "{{ Installed | int + 1 }}"
-  when: not pre_installation.exists and installation_status.changed
-#-----------------------------------------------------------------------------------
 - name: Updates Failed status if failed in current play
 #-----------------------------------------------------------------------------------
   set_fact:
