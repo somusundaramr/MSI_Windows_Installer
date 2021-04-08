@@ -48,3 +48,5 @@ Author Information
 
 Created by : Somasundaram  R. 
 Please make necessary changes or mail me at tomsomu@gmail.com
+
+[![CI](https://travis-ci.org/somusundaramr/MSI_Windows_Installer.svg?branch=master)](https://travis-ci.org/github/somusundaramr/MSI_Windows_Installer)
