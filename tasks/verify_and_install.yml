@@ -6,7 +6,7 @@
     path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{{ Product_Code }}
   register: pre_installation
 #----------------------------------------------------------------------
-- name: Copy MSI file to remote host tmp location and install
+- name: Copy MSI file to remote host tmp location, install and clean up
 #----------------------------------------------------------------------
   block:
     - name: Copy MSI file from network share to host
@@ -25,8 +25,14 @@
       when: not msicopy_status.failed
       notify:
         - update install status
-    - name: flush handlers
+        
+    - name: Forcefully run handlers to update status before next task
       meta: flush_handlers
+    
+    - name: Cleanup tmp
+      win_file: 
+        path: c:\temp\{{ MSI_File_Location | basename }}
+        state: absent
   when: stat_file.stat.exists and ansible_powershell_version >= 3 and not pre_installation.exists
   become: yes
   become_user: ansible
